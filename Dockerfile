@@ -51,6 +51,10 @@ RUN \
   && apk del .build gcc musl-dev \
   && rm -rf /usr/local/lib/python3.8/site-packages/mkdocs/themes/*/* \
   && rm -rf /tmp/*
+RUN  pip install --no-cache-dir \
+                 pygments \
+                 pymdown-extensions \
+                 mkdocs-htmlproofer-plugin
 
 # Set working directory
 WORKDIR /docs
